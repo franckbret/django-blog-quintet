@@ -1,0 +1,9 @@
+input{ max-width:98%; width:98%;}
+div.main{ width:65%; margin-left:1%; border: solid 1px #efefef; float:left;}
+aside{width:30%;float:left;}
+dl, dt, dd{ display:block;}
+dl { margin: 0; background-color:#efefef; }
+dl dt { display:inline; width:18%; margin-left:1%; vertical-align: top; background-color:#ddd; border-bottom:solid 1px #efefef; }
+dl dd { display:inline; width:78%; margin-left:1%; vertical-align: top; border-bottom:solid 1px #ddd; }
+dl dd ul { margin: 0; padding:0;}
+dl dd ul li { display:inline; vertical-align: top; list-style-type:none;}

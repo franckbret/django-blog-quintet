@@ -1,0 +1,8 @@
+========================
+Django Quintet Blog Change Log
+========================
+
+Version 0.1, 15th october 2010:
+---------------------------------
+
+* First version

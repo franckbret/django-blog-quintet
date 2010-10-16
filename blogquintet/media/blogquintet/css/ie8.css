@@ -1,0 +1,3 @@
+/* ie8 doesn't support pseudo class :not, stupid */
+input[type=text], input[type=password], input[type=email], input[type=search], input.text, input.title, textarea, select {font-size: 1.3em; background: #ffffff; border: solid 2px #eaeaea; outline: none; padding: 1%; width: 98%; max-width:98%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -moz-border-radius: 8px; -webkit-border-radius: 8px; -khtml-border-radius: 8px; border-radius: 8px;}
+input[type=text]:focus, input[type=password]:focus, input[type=email], input[type=search], input.text:focus, input.title:focus, textarea:focus, select:focus {background: #AAE0FF; border: solid 2px #eaeaea;}

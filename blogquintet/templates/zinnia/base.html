@@ -1,0 +1,58 @@
+{% extends "zinnia/skeleton.html" %}
+{% load zinnia_tags tagging_tags i18n %}
+{% block breadcrumbs %}
+{% zinnia_breadcrumbs %}
+{% endblock %}
+
+{% block sidebar %}
+<div class="search">
+  <form method="get" id="searchform" action="{% url zinnia_entry_search %}">
+    <p>
+      <label for="search">{% trans "Search" %}</label>
+	  <input type="search" id="search" placeholder="{% trans "Keywords..." %}" name="pattern" />
+      <input type="submit" class="submitbutton" value="OK" />
+    </p>
+  </form>
+</div>
+<div class="categories">
+  <h3>{% trans "Categories" %}</h3>
+  {% get_categories %}
+</div>
+<div class="tags">
+  <h3>{% trans "Tags" %}</h3>
+  {% tag_cloud_for_model zinnia.entry as tag_cloud with steps=6 %}
+  <ul>
+    {% for tag in tag_cloud %}
+    <li>
+      <a href="{% url zinnia_tag_detail tag.name %}" title="{{ tag.count }} {% trans "entries" %}" class="tag_{{ tag.font_size }}">
+	{{ tag }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="recents">
+  <h3>{% trans "Recent entries" %}</h3>
+  {% get_recent_entries 5 %}
+</div>
+<div class="comments">
+  <h3>{% trans "Recent comments" %}</h3>
+  {% get_recent_comments 5 %}
+</div>
+<div class="randoms">
+  <h3>{% trans "Random entries" %}</h3>
+  {% get_random_entries 5 %}
+</div>
+<div class="populars">
+  <h3>{% trans "Popular entries" %}</h3>
+  {% get_popular_entries 5 %}
+</div>
+<div class="archives">
+  <h3>{% trans "Archives" %}</h3>
+  {% get_archives_entries_tree %}
+</div>
+<div class="calendar">
+  <h3>{% trans "Calendar" %}</h3>
+  {% get_calendar_entries %}
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "zinnia/base.html" %}
+{% load i18n zinnia_tags comments %}
+
+{% block title %}{% trans "Comment preview" %}{% endblock %}
+
+{% block content %}
+<article class="hentry">
+  <h3>{% trans "Preview of the comment" %}</h3>
+  {% if form.errors %}
+  <h2>
+    {% blocktrans count form.errors|length as errors %}Please correct following error.{% plural %}Please correct following errors.{% endblocktrans %}
+  </h2>
+  {% else %}
+  <section>
+	<ol class="comment-list">
+	  <li id="comment-preview" class="comment {% cycle box1,box2 %} {% if form.cleaned_data.user in object.authors.all %}author-post {% endif %}">
+		<span class="meta vcard">
+		  {% if form.cleaned_data.url %}
+		  <a href="{{ form.cleaned_data.url }}" class="fn">{{ form.cleaned_data.name }}</a>
+		  {% else %}
+		  <span class="fn">{{ form.cleaned_data.name }}</span>
+		  {% endif %}
+		  <time datetime="{{ now|date:"c" }}" pubdate="pubdate" class="comment-date"> {% trans "says on" %} {{ now|date:"D d F Y H:i"|capfirst }}</time>
+		  <img src="{% get_gravatar form.cleaned_data.email 60 "G" %}" class="gravatar" alt="form.cleaned_data.name" />
+		</span>
+		<div class="comment-body">
+		  <cite>
+			{{ comment }}
+		  </cite>
+		</div>
+	  </li>
+	</ol>
+	{% endif %}
+  </section>
+  {% include "comments/zinnia/entry/form.html" %}
+</article>
+{% endblock %}
