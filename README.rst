@@ -18,7 +18,7 @@ You can also use Django Blog Quintet as an app.
 
 Add 'blogquintet' to your installed apps.
 
-Be sure to put 'blogquintet' __BEFORE__ 'zinnia' in order to have templates
+Be sure to put 'blogquintet' *BEFORE* zinnia' in order to have templates
 inheritance.
 
 Something like this : ::

@@ -10,19 +10,19 @@
 	<dd>
 	  <ul>{% for author in object.authors.all %}
 		<li class="vcard">
-		  <a href="{% url zinnia_author_detail author %}" title="{% blocktrans with author as author %}Show {{ author }} entries{% endblocktrans %}" class="author">
+		  <a href="{% url zinnia_author_detail author %}" title="{% blocktrans with author as author %}Show {{ author }} entries{% endblocktrans %}" class="fn nickname url author">
 			<strong class="fn">{{ author }}</strong>
 		  </a>{% if not forloop.last %}, {% endif %}
 		</li>{% endfor %}
 	  </ul>
 	</dd>
 	<dt>{% trans "Created on" %}</dt>
-	<dd><time datetime="{{ object.creation_date|date:"c" }}" pubdate="pubdate" class="entry-date">{{ object.creation_date|date:"D d F Y"|capfirst }}</time></dd>
+	<dd><time datetime="{{ object.creation_date|date:"c" }}" pubdate="pubdate" class="entry-date" title="{{ object.creation_date|date:"c" }}Z">{{ object.creation_date|date:"D d F Y"|capfirst }}</time></dd>
 	<dt class="entry-category">{% trans "Category" %}</dt>
 	<dd>
 	  <ul>{% for category in object.categories.all %}
 		<li>
-		  <a href="{{ category.get_absolute_url }}" title="{{ category }}">
+		  <a href="{{ category.get_absolute_url }}" title="{{ category }}" rel="category">
 			<em>{{ category }}</em>
 		  </a>{% if not forloop.last %}, {% endif %}
 		</li>{% endfor %}
@@ -47,7 +47,7 @@
 	<dd>
 	  <ul>{% tags_for_object object as tag_list %}{% for tag in tag_list %}  
 		<li>
-		  <a href="{% url zinnia_tag_detail tag %}" title="Tag {{ tag }}">
+		  <a href="{% url zinnia_tag_detail tag %}" title="Tag {{ tag }}" rel="tag">
 			{{ tag }}
 		  </a>{% if not forloop.last %}, {% endif %}
 		  </li>
