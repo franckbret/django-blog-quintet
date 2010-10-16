@@ -178,7 +178,7 @@ body.blog{ background-color:#fff; width:100%; margin : 0 auto; max-width:1152px;
             article.hentry>header { margin-bottom: 1em; }
             article.hentry>header>h2.entry-title { background-color:#CC3D33; color:#fff; padding:0.4em; margin-bottom: 0; 	border-top-left-radius: 16px 16px;	border-top-right-radius: 16px 16px;	-moz-border-radius-topleft: 16px;	-moz-border-radius-topright: 16px;	-webkit-border-top-left-radius: 16px;	-webkit-border-top-right-radius: 16px;}
             article.hentry>header>h2.entry-title a{ display:block;color:#fff;}
-            /*article.hentry>header>dl.entry-meta>dt{padding-left:1.5em;}*/
+
             article.hentry>header>dl.entry-meta>dt.entry-category:before{ content: url(../img/category.png); }
 
             article.hentry>figure { text-align:center; }
@@ -194,10 +194,10 @@ body.blog{ background-color:#fff; width:100%; margin : 0 auto; max-width:1152px;
             
             article.hentry>section.inner-links{width:100%; display:inline-block; vertical-align: top; }
             article.hentry>section.inner-links>nav.previous-next>a{ width:48%; margin:1%; color:#fff; background-color:#CC3D33; padding:0.8em; display:inline-block; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing:border-box; }
-            article.hentry>section.inner-links>nav.previous-next>a.previous-entry{text-align:right;}
-            article.hentry>section.inner-links>nav.previous-next>a.next-entry{text-align:left; }
-            article.hentry>section.inner-links>nav.previous-next>a.previous-entry:after{content:" << "; font-size:1.8em;}
-            article.hentry>section.inner-links>nav.previous-next>a.next-entry:before{content:" >> " ; font-size:1.8em;}
+            article.hentry>section.inner-links>nav.previous-next>a.entry-previous{text-align:right;}
+            article.hentry>section.inner-links>nav.previous-next>a.entry-next{text-align:left; }
+            article.hentry>section.inner-links>nav.previous-next>a.entry-previous:after{content:" << "; font-size:1.8em;}
+            article.hentry>section.inner-links>nav.previous-next>a.entry-next:before{content:" >> " ; font-size:1.8em;}
             
             article.hentry>section>ol.comment-list{ color:#CECECE; font-size:200%; margin:0; padding-left: 1.666em;}
             article.hentry>section>ol.comment-list>li{ border-bottom:solid 1px #CECECE; margin-bottom:1px; padding:0.4em;}

@@ -32,7 +32,7 @@
 </header>
 {% if object.image %}
 <figure>
-  <a href="{{ object.get_absolute_url }}" title="{{ object.title }}">
+  <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
 	<img src="{{ object.image.url }}" alt="{{ object.title }}" />
   </a>
   <figcaption>{{ object.title }}</figcaption>

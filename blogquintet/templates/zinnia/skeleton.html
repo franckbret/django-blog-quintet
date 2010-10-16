@@ -1,7 +1,7 @@
 {% load zinnia_tags tagging_tags i18n %}
 {% tags_for_model zinnia.entry as tag_entry %}
 <!doctype html> 
-<html lang="{{ LANGUAGE_CODE }}"> 
+<html lang="{{ LANGUAGE_CODE }}">
   <head> 
     {% block meta %}
 	<meta charset="utf-8" /> 
@@ -26,6 +26,7 @@
     <![endif]-->
 	{% endblock meta-link %}
     {% get_archives_entries "zinnia/tags/archives_entries_link.html" %}
+    <link rel="home" href="{% url zinnia_entry_archive_index %}" />
     <link rel="pingback" href="/xmlrpc/" />
     <link rel="EditURI" type="application/rsd+xml" href="{% url zinnia_rsd %}" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% url zinnia_wlwmanifest %}" />
@@ -88,7 +89,7 @@
 		</nav>
       </header>
 	  {% endblock header %}
-		<div class="main">
+		<div class="main hfeed">
 		  {% block content %}
 			<h3>The content block need to be overrided!</h3>
 		  {% endblock content %}

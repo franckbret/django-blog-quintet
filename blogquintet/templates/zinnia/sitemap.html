@@ -13,7 +13,7 @@
   <ul>
     {% for entry in category.entries_published_set.all %}
     <li>
-      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">{{ entry.title }}</a>
+      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
       {% with entry.comments.count as comment_count %}
       - {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
       {% endwith %}
@@ -32,7 +32,7 @@
   <ul>
     {% for entry in entries %}
     <li>
-      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">{{ entry.title }}</a>
+      <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
       - {{ entry.creation_date|date:"d b Y" }}
       {% with entry.comments.count as comment_count %}
       - {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
