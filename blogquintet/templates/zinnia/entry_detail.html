@@ -112,7 +112,9 @@
   <br />
   <hr />
     <section class="inner-links" role="complementary">
+	{% if object.previous_entry or object.next_entry %}
 	<nav class="previous-next">
+	  <h3>{% trans "Previous and next entries" %}</h3>
 	  {% with object.previous_entry as previous_entry %}
 	  {% if previous_entry %}
 		<a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" class="entry-previous" rel="prev">
@@ -128,6 +130,7 @@
 	  {% endif %}
 	  {% endwith %}
 	</nav>
+	{% endif %}
   </section>
 	{% if object.related_published_set %}
   <section class="entry-related">
