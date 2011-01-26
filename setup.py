@@ -8,12 +8,6 @@ setup(name='django-blog-quintet',
     author='Franck BRET',
     author_email='franckbret@gmail.com',
     url='http://github.com/franckbret/django-blog-quintet/',
-    #template_patterns = [
-    #    'templates/*.html',
-    #    'templates/*/*.html',
-    #    'templates/*/*/*.html',
-    #    'templates/*/*/*/*.html',
-    #    ],
     packages=['blogquintet'],
     package_data={'blogquintet': [
         'templates/*.html',
