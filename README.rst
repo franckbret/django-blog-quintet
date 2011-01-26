@@ -15,6 +15,7 @@ Basically you can just get the sources, copy the templates folder to your
 project templates directory and make directly your changes.
 
 You can also use Django Blog Quintet as an app.
+Check INSTALL.rst for package installation.
 
 Add 'blogquintet' to your installed apps.
 
